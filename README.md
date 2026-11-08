@@ -1,7 +1,7 @@
 # openum
 
 [![CI](https://github.com/TimPeinkofer/openum/actions/workflows/ci.yml/badge.svg)](https://github.com/TimPeinkofer/openum/actions/workflows/ci.yml)
-[![docs](https://github.com/TimPeinkofer/openum/actions/workflows/docs.yml/badge.svg)](https://github.com/TimPeinkofer/openum/actions/workflows/docs.yml)
+[![docs](https://github.com/TimPeinkofer/openum/actions/workflows/docs.yaml/badge.svg)](https://github.com/TimPeinkofer/openum/actions/workflows/docs.yaml)
 [![PyPI version](https://img.shields.io/pypi/v/openum.svg)](https://pypi.org/project/openum/)
 [![Python versions](https://img.shields.io/pypi/pyversions/openum.svg)](https://pypi.org/project/openum/)
 [![Upload Status](https://github.com/TimPeinkofer/openum/actions/workflows/publish.yml/badge.svg)](https://github.com/TimPeinkofer/openum/actions/workflows/publish.yml)
