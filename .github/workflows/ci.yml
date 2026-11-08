@@ -1,4 +1,4 @@
-name: NumKit CI
+name: openum CI
 
 on:
   push:
