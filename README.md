@@ -1,7 +1,9 @@
 # openum
 
 [![CI](https://github.com/TimPeinkofer/openum/actions/workflows/ci.yml/badge.svg)](https://github.com/TimPeinkofer/openum/actions/workflows/ci.yml)
-
+[![PyPI version](https://img.shields.io/pypi/v/openum.svg)](https://pypi.org/project/openum/)
+[![Python versions](https://img.shields.io/pypi/pyversions/openum.svg)](https://pypi.org/project/openum/)
+[![Upload Status](https://github.com/TimPeinkofer/openum/actions/workflows/publish.yml/badge.svg)](https://github.com/TimPeinkofer/openum/actions/workflows/publish.yml)
 ## Why openum?
 
 While giant libraries like SciPy provide powerful "black-box" solvers optimized in C, **openum** bridges the gap between complex engineering and educational clarity. 
