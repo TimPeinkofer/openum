@@ -7,7 +7,7 @@ from unittest.mock import patch
 # Add the path to the module
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'openum')))
 
-import PDE
+import openum.PDE as PDE
 
 class TestPDESolvers(unittest.TestCase):
 

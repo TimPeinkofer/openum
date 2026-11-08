@@ -6,7 +6,7 @@ import os
 # Add the path to the numint module
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'openum')))
 
-from Errorcalc import IntegrationandDiffMethodError, error
+from openum.Errorcalc import IntegrationandDiffMethodError, error
 
 def dummy_integration_method(n, a, b, func):
     """

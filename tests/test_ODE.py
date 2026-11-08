@@ -7,7 +7,7 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'openum')))
 
 # Assuming the functions are in a module named 'ode_solver'
-from ODE import precalc, Heun, adam_predictor, adam_corrector, adam_ode_int, Adam, runge_kutta, velocity_verlet
+from openum.ODE import precalc, Heun, adam_predictor, adam_corrector, adam_ode_int, Adam, runge_kutta, velocity_verlet
 
 
 class TestOdeSolver(unittest.TestCase):

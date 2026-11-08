@@ -6,7 +6,8 @@ import os
 
 # Add the path to the numint module
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'openum')))
-from NonLinEq import newtons_method, linear_interpolation, solve_fixed_point, bisection_method, jacobi_method, Gauss_elimination_pivoted
+
+from openum.NonLinEq import newtons_method, linear_interpolation, solve_fixed_point, bisection_method, jacobi_method, Gauss_elimination_pivoted
 
 class TestRootFindingMethods(unittest.TestCase):
 
