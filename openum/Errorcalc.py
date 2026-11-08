@@ -1,4 +1,4 @@
-import numint, numdiff
+from . import numint, numdiff
 from typing import Callable
 
 class IntegrationandDiffMethodError:

@@ -12,9 +12,13 @@ def main():
     y0 = 100.0        # Initial value
     t_end = 10.0      # End time
     step_size = 0.1   # Step size
+    
+    # openum expects the number of steps (n) instead of the step size
+    n = int((t_end - t0) / step_size)
 
-    # Calculation (adjust the function name to match your ODE.py, e.g., euler or runge_kutta)
-    t_values, y_values = ode.euler_method(f, t0, y0, t_end, step_size)
+    # Calculation using Runge-Kutta 4th order from your ODE module
+    # Signature: runge_kutta(x_start, x_end, y_0, n, f, plotchoose)
+    t_values, y_values = ode.runge_kutta(t0, t_end, y0, n, f, plotchoose=True)
 
     # Print results
     print(f"Initial value at time {t0}: {y0}")

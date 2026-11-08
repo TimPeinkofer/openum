@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from ODE import runge_kutta
-from NonLinEq import linear_interpolation
+from .ODE import runge_kutta
+from .NonLinEq import linear_interpolation
 from typing import Callable
 
 def Matrix(h: float, n: int) -> np.ndarray:

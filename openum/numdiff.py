@@ -1,4 +1,4 @@
-from Interpolation import cubic_splines, h
+from .Interpolation import cubic_splines, h
 from typing import Callable, Optional
 import numpy as np
 
