@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "NumKit" # Muss auf PyPI einzigartig sein!
+name = "openum"
 version = "0.9.5"
 authors = [
   { name="Tim Peinkofer", email="tim.peinkofer@student.uni-tuebingen.de" },
