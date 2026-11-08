@@ -1,16 +1,16 @@
-# NumKit
+# openum
 
-[![CI](https://github.com/TimPeinkofer/NumKit/actions/workflows/ci.yml/badge.svg)](https://github.com/TimPeinkofer/NumKit/actions/workflows/ci.yml)
+[![CI](https://github.com/TimPeinkofer/openum/actions/workflows/ci.yml/badge.svg)](https://github.com/TimPeinkofer/openum/actions/workflows/ci.yml)
 
-## Why NumKit?
+## Why openum?
 
-While giant libraries like SciPy provide powerful "black-box" solvers optimized in C, **NumKit** bridges the gap between complex engineering and educational clarity. 
+While giant libraries like SciPy provide powerful "black-box" solvers optimized in C, **openum** bridges the gap between complex engineering and educational clarity. 
 
-* **Pure Python & Readable:** No obscured code. NumKit implements classic, transparent textbook algorithms (from *Newton-Halley* and *Aitken acceleration* to *Adams Predictor-Corrector* and *PDE solvers*) that you can actually read, learn from, and debug.
-* **Batteries Included (Built-in Plots):** Forget writing repetitive boilerplate code. NumKit solvers come with integrated visual plotting capabilities (`plotchoose`) out of the box, allowing you to visualize ODE trajectories and numerical results instantly.
-* **All-in-One Educational Toolkit:** Instead of importing dozens of sub-modules, NumKit unifies the entire roadmap of numerical mathematics—linear algebra, interpolation, integration, differentiation, BVPs, and PDEs—under a single, intuitive, and beginner-friendly API.
+* **Pure Python & Readable:** No obscured code. openum implements classic, transparent textbook algorithms (from *Newton-Halley* and *Aitken acceleration* to *Adams Predictor-Corrector* and *PDE solvers*) that you can actually read, learn from, and debug.
+* **Batteries Included (Built-in Plots):** Forget writing repetitive boilerplate code. openum solvers come with integrated visual plotting capabilities (`plotchoose`) out of the box, allowing you to visualize ODE trajectories and numerical results instantly.
+* **All-in-One Educational Toolkit:** Instead of importing dozens of sub-modules, openum unifies the entire roadmap of numerical mathematics—linear algebra, interpolation, integration, differentiation, BVPs, and PDEs—under a single, intuitive, and beginner-friendly API.
 
-> **NumKit is the lightweight, didactic alternative for students, engineers, and developers who don't just want a number, but want to understand the physics and math behind the solution.**
+> **openum is the lightweight, didactic alternative for students, engineers, and developers who don't just want a number, but want to understand the physics and math behind the solution.**
 
 
 ## Installation
@@ -20,14 +20,14 @@ Thanks to the modern package configuration, `numpy` and `matplotlib` will be ins
 ### Option 1: Direct Installation (Recommended for Users)
 You can install the library directly from GitHub using `pip`:
 ```bash
-pip install git+[https://github.com/TimPeinkofer/NumKit.git](https://github.com/TimPeinkofer/NumKit.git)
+pip install git+[https://github.com/TimPeinkofer/openum.git](https://github.com/TimPeinkofer/openum.git)
 ```
 
 ### Option 2: Local Installation (For Developers)
 If you want to modify the code, clone the repository and install it in editable mode:
 ```bash
-git clone [https://github.com/TimPeinkofer/NumKit.git](https://github.com/TimPeinkofer/NumKit.git)
-cd NumKit
+git clone [https://github.com/TimPeinkofer/openum.git](https://github.com/TimPeinkofer/openum.git)
+cd openum
 pip install -e .
 ```
 
