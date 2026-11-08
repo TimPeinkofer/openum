@@ -20,7 +20,7 @@ Thanks to the modern package configuration, `numpy` and `matplotlib` will be ins
 ### Option 1: Direct Installation (Recommended for Users)
 You can install the library directly from GitHub using `pip`:
 ```bash
-pip install open
+pip install openum
 ```
 
 ### Option 2: Local Installation (For Developers)
