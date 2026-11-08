@@ -15,7 +15,7 @@ While giant libraries like SciPy provide powerful "black-box" solvers optimized 
 
 > **openum is the lightweight, didactic alternative for students, engineers, and developers who don't just want a number, but want to understand the physics and math behind the solution.**
 
-📚 **[Zur vollständigen API-Dokumentation & Tutorials](https://timpeinkofer.github.io/openum/)**
+📚 **[View the complete API documentation and tutorials](https://timpeinkofer.github.io/openum/)**
 
 
 ## Installation
