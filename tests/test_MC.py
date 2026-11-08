@@ -4,7 +4,7 @@ import sys
 import os
 
 # Add the path to the module
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'NumKit')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'openum')))
 
 # Importiere die neuen Monte-Carlo-Methoden (Pfad anpassen, falls sie woanders liegen)
 from MC import Monte_Carlo, Monte_Carlo_nD
