@@ -7,7 +7,7 @@
 You can install `openum` directly from GitHub (or via PyPI, once published):
 
 ```bash
-pip install git+https://github.com/timpeinkofer/openum.git
+pip install openum
 ```
 
 *For local development and testing, please refer to our [Contributing Guidelines](https://github.com/timpeinkofer/openum/blob/main/CONTRIBUTING.md).*
