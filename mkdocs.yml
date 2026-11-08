@@ -1,0 +1,21 @@
+site_name: openum
+theme:
+  name: material
+
+plugins:
+  - mkdocstrings
+
+nav:
+  - Home: index.md
+  - Modules:
+    - Boundary Value Problems: bvp.md
+    - Error Calculation: errorcalc.md
+    - Interpolation: interpolation.md
+    - Monte Carlo (MC): mc.md
+    - Non-linear Equations: nonlineq.md
+    - Numerical Eigenvalues: numeigenv.md
+    - Numerical Linear Equations: numlinequ.md
+    - Ordinary Differential Eq. (ODE): ode.md
+    - Partial Differential Eq. (PDE): pde.md
+    - Numerical Differentiation: numdiff.md
+    - Numerical Integration: numint.md
