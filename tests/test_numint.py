@@ -4,7 +4,7 @@ import sys
 import os
 
 # Add the path to the numint module
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'NumKit')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'openum')))
 
 from numint import precalc, Simpson_1_3, Romberg, Gauss_legendre, Newton_cotes, Trapezoidal, Simpson_3_8
 
