@@ -4,7 +4,7 @@ import sys
 import os
 
 # Add the path to the NumKit module
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'NumKit')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'openum')))
 
 from NumLinEqu import Gauss_elimination, gauss_seidel, inverse_matrix, Gauss_Jordan, overrelaxation, overrelax_calc, determinant
 
