@@ -1,6 +1,7 @@
 # openum
 
 [![CI](https://github.com/TimPeinkofer/openum/actions/workflows/ci.yml/badge.svg)](https://github.com/TimPeinkofer/openum/actions/workflows/ci.yml)
+[![CI](https://github.com/TimPeinkofer/openum/actions/workflows/docs.yml/badge.svg)](https://github.com/TimPeinkofer/openum/actions/workflows/docs.yml)
 [![PyPI version](https://img.shields.io/pypi/v/openum.svg)](https://pypi.org/project/openum/)
 [![Python versions](https://img.shields.io/pypi/pyversions/openum.svg)](https://pypi.org/project/openum/)
 [![Upload Status](https://github.com/TimPeinkofer/openum/actions/workflows/publish.yml/badge.svg)](https://github.com/TimPeinkofer/openum/actions/workflows/publish.yml)
@@ -13,6 +14,8 @@ While giant libraries like SciPy provide powerful "black-box" solvers optimized 
 * **All-in-One Educational Toolkit:** Instead of importing dozens of sub-modules, openum unifies the entire roadmap of numerical mathematics—linear algebra, interpolation, integration, differentiation, BVPs, and PDEs—under a single, intuitive, and beginner-friendly API.
 
 > **openum is the lightweight, didactic alternative for students, engineers, and developers who don't just want a number, but want to understand the physics and math behind the solution.**
+
+📚 **[Zur vollständigen API-Dokumentation & Tutorials](https://timpeinkofer.github.io/openum/)**
 
 
 ## Installation
