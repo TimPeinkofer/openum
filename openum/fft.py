@@ -11,7 +11,7 @@ def cooley_tuckey(x: ArrayLike) -> NDArray[np.complex128]:
         Input array of complex numbers.
     
     Returns:
-    array_like
+    result: array_like
         The FFT of the input array.
     """
 
@@ -23,7 +23,8 @@ def cooley_tuckey(x: ArrayLike) -> NDArray[np.complex128]:
     even = cooley_tuckey(x[::2])
     odd = cooley_tuckey(x[1::2])
     T = np.exp(-2j * np.pi * np.arange(N) / N)
-    return np.concatenate([even + T[:N // 2] * odd, even + T[N // 2:] * odd])
+    result = np.concatenate([even + T[:N // 2] * odd, even + T[N // 2:] * odd])
+    return result
 
 
 def cooley_tuckey_ND(matrix: ArrayLike) -> NDArray[np.complex128]:
@@ -36,14 +37,14 @@ def cooley_tuckey_ND(matrix: ArrayLike) -> NDArray[np.complex128]:
         Input array of complex numbers.
     
     Returns:
-    result_2D: array_like
+    result_ND: array_like
         The FFT of the input array.
     """
 
     matrix = np.asarray(matrix, dtype=complex)
 
     for axis in range(matrix.ndim):
-        
+        result_ND = np.empty_like(matrix)
         # Prüfung auf Zweierpotenz
         if matrix.shape[axis] & (matrix.shape[axis] - 1) != 0:
             raise ValueError(
@@ -52,11 +53,11 @@ def cooley_tuckey_ND(matrix: ArrayLike) -> NDArray[np.complex128]:
             )    
         else:
             # 1D-FFT auf genau diese Achse anwenden und das Array überschreiben
-            result = np.apply_along_axis(cooley_tuckey, axis, matrix)
+            result_ND = np.apply_along_axis(cooley_tuckey, axis, matrix)
 
     
     
-    return result
+    return result_ND
 
 
 
