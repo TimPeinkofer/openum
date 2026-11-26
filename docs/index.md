@@ -43,6 +43,7 @@ Explore the API documentation for our core modules:
 - **[Interpolation](interpolation.md)**
 - **[Numerical Eigenvalues](numeigenv.md)**
 - **[Error Calculation](errorcalc.md)**
+- **[Fast Fourier Transformation](fft.md)**
 
 ## License & Security
 
