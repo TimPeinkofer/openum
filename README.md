@@ -49,7 +49,7 @@ The following types of numerical problems are addressed in this library:
 7. Ordinary differential equations (Documentation in work
 8. Boundary and Initial value problems
 9. Hyperbolic, Parabolic and Elliptic Partial differential equations
-10. Monte-Carlo-Integration (Documentation in work)
+10. Monte-Carlo-Integration
 
 ---
 
@@ -459,3 +459,25 @@ Solver for the 1D wave equation.
   - `alpha`: Wave speed.
 - **Returns:**
   - `tuple`: `(u, x_values, t_values)`.
+
+### 10. Monte Carlo Integration
+Algorithms for numerical integration using Monte Carlo methods found in MC.py.
+
+#### `Monte_Carlo(n, a, b, func)`
+Calculating the integral of a function via Monte Carlo integration.
+- **Args:**
+  - `n`: Number of random samples.
+  - `a`: Lower bound of the integral.
+  - `b`: Upper bound of the integral.
+  - `func`: Function that needs to be integrated.
+- **Returns:**
+  - `tuple`: `(result, error)` containing the approximated value of the integration and the estimated statistical error (Standard Error of the Mean).
+
+#### `Monte_Carlo_nD(n, bounds, func)`
+Calculating the integral of a multi-dimensional function via Monte Carlo integration.
+- **Args:**
+  - `n`: Number of random samples.
+  - `bounds`: List of tuples `[(lower, upper), ...]` for each dimension.
+  - `func`: Function to integrate.
+- **Returns:**
+  - `tuple`: `(result, error)` containing the approximated value of the integration and the estimated statistical error.

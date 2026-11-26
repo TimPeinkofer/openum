@@ -24,8 +24,10 @@ def f(x):
     return x**2
 
 # Calculate the integral from 0 to 1
-result = mc.monte_carlo_integration(f, 0, 1, num_samples=10000)
+result, error = Monte_Carlo(10000, 0, 1, f)
+
 print(f"Estimated Integral: {result}")
+print(f"Estimated Error: {error}")
 ```
 
 ## Features & Modules

@@ -17,7 +17,8 @@ currently being supported with security updates.
 | v0.9.5.3 | no |
 | v0.9.5.3a | no |
 | v0.9.5.4 | no |
-| v1.0 | yes |
+| v1.0 | no |
+| v1.0.1 | yes |
 
 
 
