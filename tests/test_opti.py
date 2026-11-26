@@ -7,7 +7,6 @@ import os
 # Add the path to the module
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'openum')))
 
-# Importiere die neuen Monte-Carlo-Methoden (Pfad anpassen, falls sie woanders liegen)
 from openum.opti import gradient_descent
 
 
@@ -19,7 +18,7 @@ class TestGradientDescent(unittest.TestCase):
         df = lambda x: 2 * x + 2
 
         x_min, history = gradient_descent(
-            f, df, x0=4.0, learning_rate=0.1, plotchoose=False, tol=1e-6
+            f, df, x0=4.0, learning_rate=0.1, max_iter=1000, plotchoose=False, tol=1e-6
         )
 
         self.assertAlmostEqual(float(x_min), -1.0, places=4)
@@ -31,7 +30,7 @@ class TestGradientDescent(unittest.TestCase):
         grad_f = lambda v: [2 * v[0], 2 * v[1]]
 
         x_min, history = gradient_descent(
-            f, grad_f, x0=[3.0, -4.0], learning_rate=0.1, plotchoose=False, tol=1e-6
+            f, grad_f, x0=[3.0, -4.0], learning_rate=0.1, max_iter=1000, plotchoose=False, tol=1e-6
         )
 
         np.testing.assert_allclose(x_min, [0.0, 0.0], atol=1e-4)
@@ -43,7 +42,7 @@ class TestGradientDescent(unittest.TestCase):
         df = lambda x: 2 * x
 
         x_min, history = gradient_descent(
-            f, df, x0=0.0, learning_rate=0.1, plotchoose=False, tol=1e-6
+            f, df, x0=0.0, learning_rate=0.1, max_iter=1000, plotchoose=False, tol=1e-6
         )
 
         self.assertAlmostEqual(float(x_min), 0.0, places=6)
