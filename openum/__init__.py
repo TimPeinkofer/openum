@@ -9,5 +9,5 @@ from .ODE import Heun, adam_corrector, adam_ode_int, adam_predictor, Adam, runge
 from .Interpolation import cubic_splines
 from .PDE import parabolic_explicit_solver, hyperbolic_solver, elliptic_solver_laplace_2D, elliptic_solver_laplace_3D
 from .MC import Monte_Carlo, Monte_Carlo_nD
-from .fft import cooley_tukey, cooley_tukey_ND 
+from .fft import cooley_tuckey, cooley_tuckey_ND
 from .opti import gradient_descent
