@@ -51,6 +51,7 @@ The following types of numerical problems are addressed in this library:
 9. Hyperbolic, Parabolic and Elliptic Partial differential equations
 10. Monte-Carlo-Integration
 11. Optimization
+12. Fast Fourier Trafo
 
 ---
 
