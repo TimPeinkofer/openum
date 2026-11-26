@@ -1,7 +1,14 @@
 import unittest
 import numpy as np
-# Angenommen, deine Funktionen sind hier definiert oder importiert
-# from dein_modul import cooley_tuckey, cooley_tuckey_ND
+
+import sys
+import os
+
+# Add the path to the numint module
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'openum')))
+
+from openum.fft import cooley_tuckey, cooley_tuckey_ND
+
 
 class TestCooleyTuckey(unittest.TestCase):
 
@@ -11,37 +18,73 @@ class TestCooleyTuckey(unittest.TestCase):
         expected = np.fft.fft(x)
         result = cooley_tuckey(x)
         np.testing.assert_allclose(result, expected, rtol=1e-7, atol=1e-7)
+        self.assertEqual(result.dtype, np.complex128)
 
     def test_cooley_tuckey_1d_complex(self):
         """Testet die 1D-FFT mit komplexen Zahlen."""
-        x = np.array([1+1j, 2-1j, 3+2j, 4-3j])
+        x = np.array([1 + 1j, 2 - 1j, 3 + 2j, 4 - 3j])
         expected = np.fft.fft(x)
         result = cooley_tuckey(x)
         np.testing.assert_allclose(result, expected, rtol=1e-7, atol=1e-7)
 
+    def test_cooley_tuckey_1d_list_input(self):
+        """Testet, ob reguläre Python-Listen (ArrayLike) akzeptiert werden."""
+        x = [1, 2, 3, 4]
+        expected = np.fft.fft(x)
+        result = cooley_tuckey(x)
+        np.testing.assert_allclose(result, expected, rtol=1e-7, atol=1e-7)
+
+    def test_cooley_tuckey_1d_single_element(self):
+        """Testet den Basisfall N <= 1."""
+        x = np.array([5.0 + 2j])
+        result = cooley_tuckey(x)
+        np.testing.assert_allclose(result, np.fft.fft(x), rtol=1e-7, atol=1e-7)
+
+    def test_cooley_tuckey_ND_1d(self):
+        """Testet die ND-FFT auf einem 1D-Array."""
+        x = np.array([1.0, 2.0, 3.0, 4.0])
+        expected = np.fft.fftn(x)
+        result = cooley_tuckey_ND(x)
+        np.testing.assert_allclose(result, expected, rtol=1e-7, atol=1e-7)
+
     def test_cooley_tuckey_ND_2d(self):
         """Testet die ND-FFT auf einem 2D-Array (4x4)."""
-        np.random.seed(42)
-        matrix = np.random.rand(4, 4) + 1j * np.random.rand(4, 4)
+        rng = np.random.default_rng(42)
+        matrix = rng.random((4, 4)) + 1j * rng.random((4, 4))
         expected = np.fft.fftn(matrix)
         result = cooley_tuckey_ND(matrix)
         np.testing.assert_allclose(result, expected, rtol=1e-7, atol=1e-7)
+        self.assertEqual(result.dtype, np.complex128)
 
     def test_cooley_tuckey_ND_3d(self):
         """Testet die ND-FFT auf einem 3D-Array (2x4x8)."""
-        np.random.seed(42)
-        matrix = np.random.rand(2, 4, 8)
+        rng = np.random.default_rng(42)
+        matrix = rng.random((2, 4, 8))
         expected = np.fft.fftn(matrix)
         result = cooley_tuckey_ND(matrix)
         np.testing.assert_allclose(result, expected, rtol=1e-7, atol=1e-7)
 
-    def test_cooley_tuckey_ND_value_error(self):
-        """Testet, ob der ValueError bei falschen Dimensionen ausgelöst wird."""
-        matrix = np.ones((3, 4)) # 3 ist keine Zweierpotenz
+    def test_cooley_tuckey_ND_value_error_axis0(self):
+        """Testet den ValueError bei falscher Länge auf Achse 0."""
+        matrix = np.ones((3, 4))
         with self.assertRaises(ValueError) as context:
             cooley_tuckey_ND(matrix)
-        
-        self.assertTrue("power of 2" in str(context.exception))
 
-if __name__ == '__main__':
+        msg = str(context.exception)
+        self.assertIn("power of 2", msg)
+        self.assertIn("axis 0", msg)
+        self.assertIn("length 3", msg)
+
+    def test_cooley_tuckey_ND_value_error_axis1(self):
+        """Testet den ValueError bei falscher Länge auf einer späteren Achse."""
+        matrix = np.ones((4, 6))
+        with self.assertRaises(ValueError) as context:
+            cooley_tuckey_ND(matrix)
+
+        msg = str(context.exception)
+        self.assertIn("axis 1", msg)
+        self.assertIn("length 6", msg)
+
+
+if __name__ == "__main__":
     unittest.main()
