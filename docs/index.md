@@ -44,6 +44,7 @@ Explore the API documentation for our core modules:
 - **[Numerical Eigenvalues](numeigenv.md)**
 - **[Error Calculation](errorcalc.md)**
 - **[Fast Fourier Transformation](fft.md)**
+- **[Optimization](opti.md)**
 
 ## License & Security
 

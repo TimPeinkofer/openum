@@ -1,21 +1,22 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def gradient_descent(f, grad_f, x0, learning_rate, max_iter,plotchoose, tol=1e-6):
+
+def gradient_descent(f, grad_f, x0, learning_rate, max_iter, plotchoose, tol=1e-6):
     """
-    Findet ein lokales Minimum einer Funktion mittels Gradientenabstieg.
+    Finds a local minimum of a function using gradient descent.
 
     Args:
-        f: Zielfunktion f(x).
-        grad_f: Gradient (Ableitung) der Funktion grad_f(x).
-        x0: Startpunkt (float für 1D oder Liste/ndarray für nD).
-        learning_rate: Schrittweite (Alpha).
-        max_iter: Maximale Anzahl an Iterationen.
-        tol: Abbruchkriterium (Norm des Gradienten).
-        plotchoose: Boolean, um den Abstieg (im 1D-Fall) zu plotten.
+        f: Objective function f(x).
+        grad_f: Gradient (derivative) of the function grad_f(x).
+        x0: Initial guess (float for 1D or list/ndarray for nD).
+        learning_rate: Step size (alpha).
+        max_iter: Maximum number of iterations.
+        plotchoose: Boolean to plot the descent (in the 1D case).
+        tol: Stopping criterion (norm of the gradient).
 
     Returns:
-        tuple: (x_min, history) - Gefundenes Minimum und Verlauf der Schritte.
+        tuple: (x_min, history) - Found minimum and history of steps.
     """
     x = np.array(x0, dtype=float)
     history = [x.copy()]
@@ -23,17 +24,17 @@ def gradient_descent(f, grad_f, x0, learning_rate, max_iter,plotchoose, tol=1e-6
     for i in range(max_iter):
         grad = np.array(grad_f(x), dtype=float)
 
-        # Abbruchkriterium: Gradient ist nah genug an 0
+        # Stopping criterion: gradient is close enough to 0
         if np.linalg.norm(grad) < tol:
             break
 
-        # Eigentlicher Update-Schritt
+        # Actual update step
         x = x - learning_rate * grad
         history.append(x.copy())
 
     history = np.array(history)
 
-    # Integrierter Plot für den 1D-Fall (didaktisch ideal)
+    # Integrated plot for the 1D case
     if plotchoose and x.ndim == 0:
         _plot_1d_descent(f, history)
 
@@ -41,7 +42,7 @@ def gradient_descent(f, grad_f, x0, learning_rate, max_iter,plotchoose, tol=1e-6
 
 
 def _plot_1d_descent(f, history):
-    """Hilfsfunktion zur Visualisierung des 1D-Gradientenabstiegs."""
+    """Helper function to visualize the 1D gradient descent."""
     x_min_plot = min(history) - 1.0
     x_max_plot = max(history) + 1.0
     x_vals = np.linspace(x_min_plot, x_max_plot, 400)
@@ -50,9 +51,9 @@ def _plot_1d_descent(f, history):
 
     plt.figure(figsize=(8, 5))
     plt.plot(x_vals, y_vals, label="f(x)", color="blue")
-    plt.plot(history, hist_y, 'ro--', label="Abstiegsschritte", markersize=5)
-    plt.scatter(history[-1], hist_y[-1], color="green", s=100, zorder=5, label="Gefundenes Minimum")
-    plt.title("Gradientenabstieg (Gradient Descent)")
+    plt.plot(history, hist_y, 'ro--', label="Descent steps", markersize=5)
+    plt.scatter(history[-1], hist_y[-1], color="green", s=100, zorder=5, label="Found minimum")
+    plt.title("Gradient Descent")
     plt.xlabel("x")
     plt.ylabel("f(x)")
     plt.legend()

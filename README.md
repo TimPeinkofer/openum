@@ -50,6 +50,7 @@ The following types of numerical problems are addressed in this library:
 8. Boundary and Initial value problems
 9. Hyperbolic, Parabolic and Elliptic Partial differential equations
 10. Monte-Carlo-Integration
+11. Optimization
 
 ---
 
@@ -481,3 +482,37 @@ Calculating the integral of a multi-dimensional function via Monte Carlo integra
   - `func`: Function to integrate.
 - **Returns:**
   - `tuple`: `(result, error)` containing the approximated value of the integration and the estimated statistical error.
+
+
+### 11. Numerical Optimization
+Methods for finding local minima of one- and multidimensional functions.
+
+#### `gradient_descent(f, grad_f, x0, learning_rate, max_iter, plotchoose, tol=1e-6)`
+Finds a local minimum of a function using the **Gradient Descent** algorithm.
+* **Args:**
+    * `f`: Objective function $f(x)$ to minimize.
+    * `grad_f`: Gradient (derivative) of the function $\nabla f(x)$.
+    * `x0`: Initial guess (float for 1D, or list/ndarray for nD).
+    * `learning_rate`: Step size ($\alpha$).
+    * `max_iter`: Maximum number of iterations.
+    * `plotchoose`: Boolean to plot the descent path (1D case).
+    * `tol`: Convergence criterion based on the norm of the gradient (default: `1e-6`).
+* **Returns:**
+    * `tuple`: `(x_min, history)` containing the approximated minimum and the array of descent steps.
+
+### 12. Fast Fourier Transform (FFT)
+Algorithms for computing one- and multidimensional Fast Fourier Transforms using the Cooley-Tukey algorithm.
+
+#### `cooley_tuckey(x)`
+Computes the 1D Fast Fourier Transform of an input sequence using the recursive **Cooley-Tukey** algorithm.
+* **Args:**
+    * `x`: Input array of real or complex numbers (`ArrayLike`, length should be a power of 2).
+* **Returns:**
+    * `ndarray`: Complex 1D array (`NDArray[np.complex128]`) containing the FFT of the input.
+
+#### `cooley_tuckey_ND(matrix)`
+Computes the $N$-dimensional Fast Fourier Transform by applying the 1D Cooley-Tukey algorithm along each axis.
+* **Args:**
+    * `matrix`: $N$-dimensional input array of real or complex numbers (`ArrayLike`). The length along each axis must be a power of 2 (otherwise a `ValueError` is raised).
+* **Returns:**
+    * `ndarray`: Complex $N$-dimensional array (`NDArray[np.complex128]`) containing the $N$-D FFT of the input.
